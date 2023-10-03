@@ -1,0 +1,10 @@
+DirectoryIndex public/index.php
+
+# ErrorDocument 404 http://localhost/s/templates/Err403.php
+
+RewriteEngine On
+RewriteBase /
+
+
+
+# Other rewrite rules can go here if needed

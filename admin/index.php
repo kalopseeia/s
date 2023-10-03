@@ -1,20 +1,20 @@
 <?php
-session_start();
-// Check if the user is already logged in
-if (isset($_SESSION['username'])) {
-    // User is already logged in, redirect to another page or display a message
-    header("Location: ../templates/Err403.php"); // Redirect to the admin dashboard or another page
-    exit();
-}
+// session_start();
+// // Check if the user is already logged in
+// if (isset($_SESSION['username'])) {
+//     // User is already logged in, redirect to another page or display a message
+//     header("Location: ../templates/Err403.php"); // Redirect to the admin dashboard or another page
+//     exit();
+// }
 ?>
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>Admin Sign-In</title>
+    <title>Admin | Sign-In</title>
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="../assets/js/jquery.min.js"></script>
     <style>
         body {
             background-image: url('../assets/img/bckground.png');
@@ -58,7 +58,7 @@ if (isset($_SESSION['username'])) {
         <div class="hdcnt">
             <h3>Login</h3>
             <hr>
-            <form action="./functions.php" method="POST">
+            <form action="includes/functions.php" method="POST">
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Username</label>
                     <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp">

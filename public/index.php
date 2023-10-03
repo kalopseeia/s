@@ -1,8 +1,9 @@
 <?php
 // require 'config.php';
-// header("Location: ../s/admin/index.php"); // Redirect to the admin dashboard or another page
-// exit();
+header("Location: admin/index.php"); // Redirect to the admin dashboard or another page
+exit();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 

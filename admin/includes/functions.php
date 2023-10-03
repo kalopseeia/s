@@ -1,10 +1,10 @@
 <?php
-require_once "../includes/db.php";
+require_once "../../includes/db.php";
 session_start();
 // Check if the user is already logged in
 if (isset($_SESSION['username'])) {
     // User is already logged in, redirect to another page or display a message
-    header("Location: ./dashboard.php"); // Redirect to the admin dashboard or another page
+    header("Location: ../dashboard.php"); // Redirect to the admin dashboard or another page
     exit();
 
 } elseif ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -22,7 +22,7 @@ if (isset($_SESSION['username'])) {
 
     if ($user) {
         $_SESSION["username"] = $user["username"];
-        header("Location: ./dashboard.php"); // Redirect to the admin dashboard
+        header("Location: ../dashboard.php"); // Redirect to the admin dashboard
         exit();
     } else {
         echo "Invalid username or password. <a href='index.php'>Try again</a>";
