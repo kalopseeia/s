@@ -27,13 +27,24 @@ $basename = basename($currentURL);
     }
 </style>
 <div class="offset-sm-2">
-    <div>
-        <ul class="nav justify-content-end bg-dark">
-            <li class="nav-item">
-                <a class="nav-link" href="./logout.php">Logout</a>
-            </li>
-        </ul>
-    </div>
+    <!-- <nav class="bg-dark navbar navbar-expand-lg bg-body-tertiary"> -->
+    <nav class="navbar bg-dark border-bottom border-body navbar-expand-lg" data-bs-theme="dark">
+
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./logout.php">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <div id="mainheader">
 
         <?php
