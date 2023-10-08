@@ -1,0 +1,179 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Bar Chart Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div style="width: 400px; margin: 0 auto;">
+        <canvas id="myBarChart" width="400" height="200"></canvas>
+    </div>
+
+    <script>
+        // Generate random data for 3 data points in a single column
+        const randomData = () => Math.floor(Math.random() * 100);
+
+        const values = [];
+        for (let i = 0; i < 3; i++) {
+            values.push(randomData());
+        }
+
+        // Create a bar chart
+        const data = {
+            labels: ["Column 1"],
+            datasets: [{
+                label: "Data",
+                data: values,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.5)',
+                    'rgba(54, 162, 235, 0.5)',
+                    'rgba(75, 192, 192, 0.5)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(75, 192, 192, 1)'
+                ],
+                borderWidth: 1
+            }]
+        };
+
+        const ctx = document.getElementById('myBarChart').getContext('2d');
+
+        const myBarChart = new Chart(ctx, {
+            type: 'bar',
+            data: data,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html> -->
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bar Chart Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div style="width: 400px; margin: 0 auto;">
+        <canvas id="myBarChart" width="400" height="200"></canvas>
+    </div>
+
+    <script>
+        // Generate random data for 4 school rooms with passed and failed students
+        const randomData = () => Math.floor(Math.random() * 50);
+
+        const passed = [];
+        const failed = [];
+        const fbiled = [];
+        
+        for (let i = 0; i < 4; i++) {
+            passed.push(randomData());
+            failed.push(randomData());
+            fbiled.push(randomData());
+        }
+
+        // Create a bar chart
+        const data = {
+            labels: ["Room 1", "Room 2", "Room 3", "Room 4"],
+            datasets: [
+                {
+                    label: "Passed",
+                    data: passed,
+                    backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                },
+                {
+                    label: "Failed",
+                    data: failed,
+                    backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                },
+                {
+                    label: "Failed",
+                    data: fbiled,
+                    backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                }
+            ]
+        };
+
+        const ctx = document.getElementById('myBarChart').getContext('2d');
+
+        const myBarChart = new Chart(ctx, {
+            type: 'bar',
+            data: data,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+ --> 
+
+
+<!--  <!DOCTYPE html>
+<html>
+<head>
+    <title>Pie Chart Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div style="width: 400px; margin: 0 auto;">
+        <canvas id="myPieChart" width="400" height="200"></canvas>
+    </div>
+
+    <script>
+        // Generate random data for passed and failed students
+        const randomPassed = Math.floor(Math.random() * 50);
+        const randomFailed = Math.floor(Math.random() * 50);
+
+        // Create a pie chart
+        const data = {
+            labels: ["Passed", "Failed"],
+            datasets: [
+                {
+                    data: [randomPassed, randomFailed],
+                    backgroundColor: [
+                        'rgba(75, 192, 192, 0.5)', // Color for Passed
+                        'rgba(255, 99, 132, 0.5)'  // Color for Failed
+                    ]
+                }
+            ]
+        };
+
+        const ctx = document.getElementById('myPieChart').getContext('2d');
+
+        const myPieChart = new Chart(ctx, {
+            type: 'pie',
+            data: data,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                legend: {
+                    position: 'top',
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+ -->

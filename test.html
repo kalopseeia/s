@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Export Table Data to Excel</title>
+</head>
+<body>
+    <h1>Table Data Export to Excel</h1>
+    
+    <table id="dataTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>John</td>
+                <td>25</td>
+                <td>john@example.com</td>
+            </tr>
+            <tr>
+                <td>Jane</td>
+                <td>30</td>
+                <td>jane@example.com</td>
+            </tr>
+            <tr>
+                <td>Doe</td>
+                <td>22</td>
+                <td>doe@example.com</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button id="exportButton">Export to Excel</button>
+
+    <script>
+        function tableToExcel(table, filename = 'data') {
+            const downloadLink = document.createElement('a');
+            const dataType = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
+            const blob = new Blob([tableToExcelSheet(table)], { type: dataType });
+            const url = URL.createObjectURL(blob);
+            
+            downloadLink.href = url;
+            downloadLink.download = `${filename}.xlsx`;
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function tableToExcelSheet(table) {
+            const tableData = [];
+            const rows = table.querySelectorAll('tr');
+            
+            for (const row of rows) {
+                const rowData = [];
+                const cells = row.querySelectorAll('td, th');
+                
+                for (const cell of cells) {
+                    rowData.push(cell.innerText);
+                }
+                
+                tableData.push(rowData.join('\t'));
+            }
+            
+            return tableData.join('\n');
+        }
+
+        document.getElementById('exportButton').addEventListener('click', function () {
+            const table = document.getElementById('dataTable');
+            tableToExcel(table, 'data');
+        });
+    </script>
+</body>
+</html>
